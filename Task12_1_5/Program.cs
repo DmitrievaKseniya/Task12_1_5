@@ -12,14 +12,14 @@
                 Console.WriteLine($"Привет, {user.Name}\n");
                 if (!user.IsPremium)
                 {
-                    Console.WriteLine("***РЕКЛАМНАЯ ПАУЗА***");
                     ShowAds();
-                    Console.WriteLine("***РЕКЛАМА ЗАКОНЧИЛАСЬ***\n");
                 }
             }
         }
         static void ShowAds()
         {
+            Console.WriteLine("***РЕКЛАМНАЯ ПАУЗА***");
+
             Console.WriteLine("Посетите наш новый сайт с бесплатными играми free.games.for.a.fool.com");
             // Остановка на 1 с
             Thread.Sleep(1000);
@@ -31,6 +31,8 @@
             Console.WriteLine("Оформите премиум-подписку на наш сервис, чтобы не видеть рекламу.");
             // Остановка на 3 с
             Thread.Sleep(3000);
+
+            Console.WriteLine("***РЕКЛАМА ЗАКОНЧИЛАСЬ***\n");
         }
 
         static List<User> GetListUser()
